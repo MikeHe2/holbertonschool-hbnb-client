@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-color: #d8d8d8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #22659488;
+    color: #fff;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-logo {
+    text-align: left;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 2rem;
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+}
+
+.details {
+    width: 100%;
+}
+
+.place-details {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.place-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.place-info h2 {
+    margin-top: 0;
+}
+
+.place-info p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.details-button {
+    background-color: #c4c4c4;
+    color: #000000;
+    width: calc(100% - font-size);
+    margin-top: 10px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.details-button:hover {
+    background-color: #949494;
+    box-shadow: 0 2px 4px rgb(117, 117, 117);
+}
+
+#reviews {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#reviews h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.review-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: calc(100% - 40px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.review-card .stars {
+    color: #000000;
+    font-size: 18px;
+}
+
+footer {
+    background-color: #22659488;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
