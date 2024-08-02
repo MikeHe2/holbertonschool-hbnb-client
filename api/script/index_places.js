@@ -1,18 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
     const placesList = document.getElementById('places-list');
+    const countryFilter = document.getElementById('country-filter');
 
-    const loadPlaces = async () => {
+    const loadPlaces = async (country = 'all') => {
         try {
-            const response = await fetch('/api/data/places.json');
+            const response = await fetch('http://127.0.0.1:5000/places');
             const places = await response.json();
-            displayPlaces(places);
+            displayPlaces(places, country);
         } catch (error) {
             console.error('Error loading places:', error);
         }
     };
 
-    const displayPlaces = (places) => {
-        places.forEach(place => {
+    const displayPlaces = (places, country) => {
+        placesList.innerHTML = '';
+        const filteredPlaces = country === 'all' ? places : places.filter(place => place.country_name === country);
+
+        filteredPlaces.forEach(place => {
             const placeCard = document.createElement('div');
             placeCard.classList.add('place-card');
 
@@ -36,5 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
             placesList.appendChild(placeCard);
         });
     };
+
+    countryFilter.addEventListener('change', () => {
+        const selectedCountry = countryFilter.value;
+        loadPlaces(selectedCountry);
+    });
+
     loadPlaces();
 });

@@ -7,10 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const urlParams = new URLSearchParams(window.location.search);
             const placeId = urlParams.get('id');
 
-            const response = await fetch('/api/data/places.json');
-            const places = await response.json();
-
-            const place = places.find(p => p.id === placeId);
+            const response = await fetch(`http://127.0.0.1:5000/places/${placeId}`);
+            const place = await response.json();
 
             if (place) {
                 displayPlaceDetails(place);
